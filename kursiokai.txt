@@ -1,0 +1,20 @@
+
++-------------------+-------------------+-----------+--------+
+| Vardas            | Pavarde           | Vidurkis  | Mediana|
++-------------------+-------------------+-----------+--------+
+| Vardas1           | Pavarde1          | 1.8       | 6      |
+| Vardas2           | Pavarde2          | 4.2       | 3      |
+| Vardas3           | Pavarde3          | 3         | 7      |
+| Vardas4           | Pavarde4          | 0.6       | 8      |
+| Vardas5           | Pavarde5          | 5.4       | 1      |
+| Vardas6           | Pavarde6          | 1.2       | 8      |
+| Vardas7           | Pavarde7          | 5.4       | 2      |
+| Vardas8           | Pavarde8          | 0.6       | 4      |
+| Vardas9           | Pavarde9          | 4.2       | 4      |
+| Vardas10          | Pavarde10         | 2.4       | 1      |
+| Vardas11          | Pavarde11         | 1.8       | 2      |
+| Vardas12          | Pavarde12         | 6         | 7      |
+| Vardas13          | Pavarde13         | 4.2       | 4      |
+| Vardas14          | Pavarde14         | 0.6       | 3      |
+| Vardas15          | Pavarde15         | 4.8       | 3      |
++-------------------+-------------------+-----------+--------+
