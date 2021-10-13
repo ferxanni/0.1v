@@ -91,7 +91,7 @@ void input(std::vector<data>& sze, int* n)
                 sze.at(k).marks.push_back(temp);
             }
             fin >> sze.at(k).exam;
-            //std::cout << Eil.at(student_counter).Vard;
+            
             sze.at(k).Total = sze.at(k).Total / *n;
             sze.at(k).Total = 0.6 * sze.at(k).exam + sze.at(k).Total * 0.4;
             k++;
