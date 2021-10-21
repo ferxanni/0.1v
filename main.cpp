@@ -43,7 +43,7 @@ void ranka_ivedimas(data sze[], int i)
         std::cout << "Įveskite egzamino rezultatą:\n";
         std::cin >> sze[i].exam;
     } while (sze[i].exam < 0 || sze[i].exam > 10);
-    std::cout << "Įveskite pažymius (kad baigti, įveskite -1:";
+    std::cout << "Iveskite pazymius (kad baigti, įveskite -1:";
     int counter = 0;
     do {
         std::cin >> temp;
@@ -61,10 +61,10 @@ void ranka_ivedimas(data sze[], int i)
 
 void stud_info(data sze[], int i) 
 {
-        std::cout << "Įveskite " << i + 1 << " studento vardą:\n";
+        std::cout << "Iveskite " << i + 1 << " studento varda:\n";
         std::cin >> sze[i].name;
     
-        std::cout << "Įveskite " << i + 1 << " studento pavardę:\n";
+        std::cout << "Iveskite " << i + 1 << " studento pavarde:\n";
         std::cin >> sze[i].surn;
 
     }
@@ -94,7 +94,7 @@ void isprintinam_data(data sze[], int studentu_sk)
 {
     std::cout << "\n";
     std::cout << std::setw(20) << std::left << "Vardas"
-        << std::setw(20) << std::left << "Pavardė"
+        << std::setw(20) << std::left << "Pavarde"
         << std::setw(18) << std::left << "Vidurkis/"
         << std::left << "Mediana\n"
         << "--------------------------------------------------------------------------\n";
@@ -108,32 +108,38 @@ void isprintinam_data(data sze[], int studentu_sk)
     std::cout << "\n";
 }
 
-int main()
+
+    
+   int main()
 {
-    
+
     int stud_nr;
-    std::string temp;
+    char temp;
     do
     {
-        std::cout << "Įveskite, kiek studentų norite įvertinti:\n";
+        std::cout << "Iveskite studentu kieki:\n";
         std::cin >> stud_nr;
-    } while (int(stud_nr) < 0 || int(stud_nr) > 100);
+    } while (int(stud_nr) < 0 || int(stud_nr) > 255);
     data sze[25];
-    
-    std::vector<data> sze_vect;
+    //std::vector<duomenys> Eil_vect;
     do
     {
-        std::cout << "Kad duomenis būtų sugeneruoti automatiškai, įrašykite 'auto', kitu atveju spauskite 1 ir enter \n";
+        std::cout << "Spauskite 1, jeigu norite, kad studentu pazymiai butu sugeneruoti automatiskai\n";
+        std::cout << "Spauskite 2, jeigu norite suvesti studentu pazymius pats\n";
         std::cin >> temp;
-        if (temp != "auto" && temp != "1") { std::cout << "netinkama komanda"; }
-    } while (temp != "auto" && temp != "1");
+        if (temp != '1' && temp != '2' ) { std::cout << "Klaida\n"; }
+    } while (temp != '1' && temp != '2' );
     for (int i = 0; i < stud_nr; i++)
     {
         stud_info(sze, i);
-        if (temp == "1") { ranka_ivedimas(sze, i); }
+        if (temp == '2') { ranka_ivedimas(sze, i); }
         else { auto_ivedimas(sze, i, 5); }
     }
+    
+   
+    
     isprintinam_data(sze, stud_nr);
+
     
     return 0;
 }
