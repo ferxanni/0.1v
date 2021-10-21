@@ -3,3 +3,6 @@ Pradedame su funkcijomis, kurios atsitiktinai sugeneruoja pažymius ir automati�
 
 # 0.2v
 Duodame programai nuskaityti txt failą su studendų pažymiais, suskaičiuojame medianą bei vidurkį ir išsaugojame naujame txt faile rezultatus: Vardas, Pavardė, vidurkis, mediana.
+
+# 0.3v
+Leidžiama naudotojui pasirinkti, ar įvesti studento duomenis bei pažymius ranka, ar įkelti iš failo. Jeigu duomenis veda naudotojas, jis turi galimybę pasirinkti, ar įvesti pažymius pačiam, ar sugeneruoti automatiškai. Papildyta Try-catch funkcija bei sukurti headers'ai.
