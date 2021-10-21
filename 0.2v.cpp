@@ -30,25 +30,57 @@ float mediana(std::vector<int> pazymiai) {
     return (tmedian);
 }
 
-void output(std::vector<data> sze, int n)
+unsigned int wordsinstring(std::string const& str)
 {
-    std::string failas;
-    std::string komentaras;
-    std::ofstream fout;
-    fout.open(failas);
+    std::stringstream stream(str);
+    return std::distance(std::istream_iterator<std::string>(stream), std::istream_iterator<std::string>());
+}
 
-    fout.open("kursiokai.txt");
+void input(std::vector<data>& sze, int* sk)
+{
+    int counter = 0;
+    int temp;
+    std::ifstream fin;
+    std::string buffas;
+    fin.open("studentai100.txt");
+    if (fin.is_open())
+    {
+        getline(fin >> std::ws, buffas);
+        *sk = wordsinstring(buffas) - 3;
+        while (true)
+        {
+
+            sze.resize(sze.size() + 1);
+            fin >> sze.at(counter).name;
+            if (fin.eof()) { sze.pop_back(); break; }
+            fin >> sze.at(counter).surn;
+            for (int i = 0; i < *sk; i++)
+            {
+                fin >> temp;
+                sze.at(counter).marks.push_back(temp);
+            }
+            fin >> sze.at(counter).exam;
+            //std::cout << Eil.at(student_counter).Vard;
+            sze.at(counter).Total = sze.at(counter).Total / *sk;
+            sze.at(counter).Total = sze.at(counter).Total * 0.4 + 0.6 * sze.at(counter).exam;
+            counter++;
+        }
+    }
+    else { std::cout << "-\n"; }
+}
 
 
+void output(std::vector<data> sze, int sk) {
 
-    //string linija(51, '-');
     std::string linija = "+-------------------+-------------------+-----------+--------+";
-
+    std::string komentaras = "Studentu duomenis su isvestu vidurkiu bei mediana";
+    std::ofstream fout;
+    fout.open("kursiokai.txt");
     fout << komentaras << std::endl;
     fout << linija << std::endl;
     fout << "| Vardas            | Pavarde           | Vidurkis  | Mediana|" << std::endl;
     fout << linija << std::endl;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < sze.size(); i++)
     {
         fout << "| " << std::setw(17) << std::left << sze[i].name
             << " | " << std::setw(17) << std::left << sze[i].surn
@@ -57,56 +89,17 @@ void output(std::vector<data> sze, int n)
             << " |" << std::endl;
     }
     fout << linija << std::endl;
-
-    fout.close();
+    fout << "\n\n";
 }
 
-unsigned int wordsinstring(std::string const& str)
-{
-    std::stringstream stream(str);
-    return std::distance(std::istream_iterator<std::string>(stream), std::istream_iterator<std::string>());
-}
-
-void input(std::vector<data>& sze, int* n)
-{
-    int k = 0;
-    int temp;
-    std::ifstream fin;
-    std::string buffas;
-    fin.open("studentai10000.txt");
-    if (fin.is_open())
-    {
-        getline(fin >> std::ws, buffas);
-        *n = wordsinstring(buffas) - 3;
-        while (true)
-        {
-
-            sze.resize(sze.size() + 1);
-            fin >> sze.at(k).name;
-            if (fin.eof()) { sze.pop_back(); break; }
-            fin >> sze.at(k).surn;
-            for (int i = 0; i < *n; i++)
-            {
-                fin >> temp;
-                sze.at(k).marks.push_back(temp);
-            }
-            fin >> sze.at(k).exam;
-            
-            sze.at(k).Total = sze.at(k).Total / *n;
-            sze.at(k).Total = 0.6 * sze.at(k).exam + sze.at(k).Total * 0.4;
-            k++;
-        }
-    }
-    else { std::cout << "-\n"; }
-}
 
 int main()
 {
-    int n;
+    int sk;
     char temp;
     std::vector<data> sze;
-    input(sze, &n);
-    output(sze, n);
+    input(sze, &sk);
+    output(sze, sk);
     system("start kursiokai.txt");
     return 0;
 }
