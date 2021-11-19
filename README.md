@@ -1,4 +1,4 @@
-#1.0v
+
 
 Buvo išbandytos dvi strategijos bei išmatuoti studentų išvedimų ir rūšiavimo į dvi grupes laikai.
 
