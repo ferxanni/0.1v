@@ -30,7 +30,21 @@ SPARTOS ANALIZĖ:
 
 
 # 1.0v
-Buvo išbandytos dvi strategijos bei išmatuoti studentų išvedimų ir rūšiavimo į dvi grupes laikai.
+# Naudojimosi instrukcija
+   Paleidus programą langelyje jums bus surašyti visi galimi pasirinkimai:
+   
+   • Įvesti studentų duomenis ranka ( Taip pat turėsite galimybę sugeneruoti pažymius automatiškai).
+   
+   • Įkelti duomenis iš failo ir išsaugoti rezultatus naujame faile kursiokai.txt.
+   
+   • Sugeneruoti automatiškai studentų failą(galėsite įvesti studentų skaičių) bei sugrupuoti juos sukūriant du naujus failus pagal tai, ar galutinis pažymys yra didesnis ar mažesnis už 5.
+   
+  Jeigu įvyks klaida nuskaitant failą arba įvedant duomenis, jums bus apie tai pranešta.
+  Siūloma sekti nurodymus, kadangi kiekvieną kartą jums bus nurodyta, kaip sustabdyti įvedimą arba kartoti jūsų pasirinkimą. 
+
+  
+  
+Buvo išbandytos dvi strategijos( pirmoji strategija buvo naudojama ankstesnėse versijose) bei išmatuoti studentų išvedimų ir rūšiavimo į dvi grupes laikai.
 
 Pirmos strategijos laikai, kai yra sukurti du nauji failai ir studentai išvedami į du atskirus failus:
 
