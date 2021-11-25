@@ -1,7 +1,10 @@
 # Naudojimosi instrukcija
-• Įsijungus programai matysite, jog galite įvesti studentų skaičių, kad sugeneruoti duomenų sąrašą automatiškai
-  • įvesite 1000, 10 000, 100 000, 1 000 000, 10 000 000(Nerekomenduojama, nes programa gali "užlūžti"
-• kai studentų sąrašo generavimas bei rūšiavimas į dvi grupes įvyks, tai jums praneš "Įvykdyta!" ir galėsite uždaryti programą
+• Įsijungus programai matysite, jog galite įvesti studentų skaičių, kad sugeneruoti duomenų sąrašą automatiškai.
+
+  • įvesite 1000, 10 000, 100 000, 1 000 000, 10 000 000(Nerekomenduojama, nes programa gali "užlūžti".
+  
+• kai studentų sąrašo generavimas bei rūšiavimas į dvi grupes įvyks, tai jums praneš "Įvykdyta!" ir galėsite uždaryti programą.
+
 • Jeigu norėsite tęsti generuoti jūsų norimo studentų skaičiaus failus toliau, tada įvesite "N" ir spausite Enter.
 
 # 1.0v
