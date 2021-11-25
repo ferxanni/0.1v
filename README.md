@@ -1,6 +1,6 @@
 
 
-Buvo išbandytos dvi strategijos bei išmatuoti studentų išvedimų ir rūšiavimo į dvi grupes laikai.
+Buvo išbandytos dvi strategijos( pirmoji strategija buvo naudojama ankstesnėse versijose) bei išmatuoti studentų išvedimų ir rūšiavimo į dvi grupes laikai.
 
 Pirmos strategijos laikai, kai yra sukurti du nauji failai ir studentai išvedami į du atskirus failus:
 
