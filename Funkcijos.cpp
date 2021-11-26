@@ -16,7 +16,7 @@ void Studentu_grupes(vector <data>& sze)
    
 
     vector <data>::iterator it = std::stable_partition(sze.begin(), sze.end(), skirstom);
-    vector <data> Weak(it, sze.end());
+    vector <data> silpni(it, sze.end());
     sze.erase(it, sze.end());
 
     std::ofstream write1("sarasas/studentai.txt");
@@ -50,7 +50,7 @@ void Studentu_grupes(vector <data>& sze)
     }
 
 
-    for (auto& i : Weak)
+    for (auto& i : silpni)
     {
         write2 << left << setfill(' ') << setw(num) << i.name;
         write2 << left << setfill(' ') << setw(num) << i.surn;
