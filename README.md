@@ -17,7 +17,7 @@ std::list
 | 10 000 000          | 53.1483                                       | -                               |
 
   
-palyginimui std::vector (paimta iš 0.3v spartos analizės)
+palyginimui std::vector (paimta iš 0.4v spartos analizės)
 | Studentų skaičius | Failo su studentais nuskaitymas | Failo rūšiavimas ir išvedimas į dvi grupes |
 |--------------------|------------------------------------|----------------------------------------------|
 | 1 000                   | 0.0416295                                  | 0.0921282                    |
