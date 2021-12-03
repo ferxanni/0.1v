@@ -48,24 +48,39 @@ int main()
 
         else if (choice == "3")
         {
+
             char repeat;
             do {
-                Generuojam_Sarasa();
-                Skaitom_faila(sze);
-                Studentu_grupes(sze);
+
+
+                Generuojam_Sarasa1();
+                Skaitom_faila1(sze);
+                std::cout << "VECTOR:" << std::endl;
+                Studentu_grupes1(sze); //vector
+                Skaitom_faila1(sze);
+                Studentu_grupes2(sze); //vetor
+
+
+
+                list <data> sze;
+                Generuojam_Sarasa2();
+                Skaitom_faila2(sze);
+                std::cout << " LIST:" << std::endl;
+                Studentu_grupes1_list(sze); //list 
+                Skaitom_faila2(sze);
+                Studentu_grupes2_list(sze); //list
+
                 
+
 
                 cout << "Jeigu norite generuoti nauja sarasa spauskite N \n";
                 std::cin >> repeat;
             } while (repeat == 'N');
 
-            
+
         }
-    } while (choice != "1" && choice != "2" && choice !="3");
+    } while (choice != "1" && choice != "2" && choice != "3");
 
 
     return 0;
 }
-
-
-  
