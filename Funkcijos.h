@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef FUNKCIJOS_H
+#define FUNKCIJOS_H
 #include "libraries.h"
 
 struct data
@@ -9,6 +9,7 @@ struct data
     int exam;
     vector <int> marks;
     bool CorrectData = true;
+    bool Group;
     double Total = 0;
     double Vidurkis;
     double Mediana;
@@ -47,12 +48,17 @@ bool Lyginam_pagal_rezultatus(const data& a, const data& b);
 bool Lyginam_pagal_varda(const data& a, const data& b);
 
 
-void  Skaitom_faila(vector <data>& sze);
+void  Skaitom_faila1(vector <data>& sze);
+void  Skaitom_faila2(list <data>& sze);
 bool skirstom(const data& a);
 void Rusiuojam_pagal_rezultatus(vector <data>& sze);
-void Generuojam_Sarasa();
+void Generuojam_Sarasa1();
+void Generuojam_Sarasa2();
 int GetLongestString(vector <data>& sze);
-void Studentu_grupes(vector <data>& sze);
+void Studentu_grupes1_list(list <data>& sze);
+void Studentu_grupes2_list(list <data>& sze);
+void Studentu_grupes1(vector <data>& sze);
+void Studentu_grupes2(vector <data>& sze);
 unsigned int wordsinstring(std::string const& str);
 int randomMark();
 void auto_ivedimas(data sze[], int i, int n);
