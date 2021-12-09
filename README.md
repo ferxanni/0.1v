@@ -16,19 +16,19 @@ Pirmos strategijos laikai, kai yra sukurti du nauji failai ir studentai išvedam
 
 |Studentų skaičius |	Std::list	         |  Std::vector      |
 |-------------------|-------------------|-----------------|
-|1 000	             |  0.0213201 s	 |  0.0196587 s    |
-|10 000	             |  0.275629 s	 |  0.249503 s      |
-|100 000                |	1.93216 s 	 |  1.85773 s        |
-|1 000 000	     |  23.2972 s	         |  20.697 s          |
+|1 000	             |  0.0221155 s	 |  0.0255558 s    |
+|10 000	             |  0.182981 s	 |  0.164794 s      |
+|100 000                |	1.82583 s 	 |  1.71247 s        |
+|1 000 000	     |  19.1258 s	         |  17.3078 s          |
 
 Antros strategijos laikai, kai yra sukuriamas tik vienas failas "nuskriausti" studentams, kurių vidurkis yra mažesnis nei 5, o studentų faile lieka tik "Kietiakai":
 
 |Studentų skaičius |  Std::list	         |  Std::vector    |
 |--------------------|------------------|----------------|
-|1 000	              |  0.0151825 s	 |  0.0172916 s  |
-|10 000	              |  0.12492 s	 |  0.128855 s    |
-|100 000	              |  1.35315 s	 |  1.25676 s      |
-|1 000 000	      |  13.3071 s	 |  12.6215 s      |
+|1 000	              |  0.0189208 s	 |  0.0302806 s  |
+|10 000	              |   0.185498 s	 |  0.173018 s    |
+|100 000	              |  1.8186 s	 |  1.81312 s      |
+|1 000 000	      |  19.2793 s	 |  17.7713 s      |
 
 # 0.5v
 vector<data> pakeistas į list<vector> ir išmatuota failo nuskaitymo trukmė bei rūšiavimo, išvedimo į du atskirus failus(kietiakai.txt ir nuskriausti.txt) trukmė.
