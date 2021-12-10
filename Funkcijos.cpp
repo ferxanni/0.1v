@@ -4,20 +4,110 @@
 
 
 
-void Studentu_grupes(vector <data>& sze)
+void Studentu_grupes1(vector <data>& szee)
 {
-
-  
 
     auto start = std::chrono::high_resolution_clock::now();
     auto st = start;
 
-    Rusiuojam_pagal_rezultatus(sze);
-   
+    for (auto& i : szee)
+    {
+        if (i.vidurkis() >= 5) i.Group = true;
+        else i.Group = false;
+    }
 
-    vector <data>::iterator it = std::stable_partition(sze.begin(), sze.end(), skirstom);
-    vector <data> silpni(it, sze.end());
-    sze.erase(it, sze.end());
+    Rusiuojam_pagal_rezultatus(szee);
+
+    std::ofstream write1("sarasas/kietiakai.txt");
+    std::ofstream write2("sarasas/nuskriausti.txt");
+
+    int num = 15;
+    int num2 = 20;
+    int num3 = 5;
+
+    write1 << left << setfill(' ') << setw(num) << "Pavarde";
+    write1 << left << setfill(' ') << setw(num) << "Vardas";
+    write1 << left << setfill(' ') << setw(num2) << "vidurkis";
+    write1 << left << setfill(' ') << setw(num2) << "mediana" << endl;
+
+    write2 << left << setfill(' ') << setw(num) << "Pavarde";
+    write2 << left << setfill(' ') << setw(num) << "Vardas";
+    write2 << left << setfill(' ') << setw(num2) << "vidurkis";
+    write2 << left << setfill(' ') << setw(num2) << "mediana" << endl;
+
+    const std::string bruksnys(num * 4 + num3 * 5 + 14, '_');
+    write1 << bruksnys << endl;
+    write2 << bruksnys << endl;
+
+
+
+
+
+    for (auto& i : szee)
+    {
+
+        if (i.Group == true)
+        {
+
+
+            write1 << left << setfill(' ') << setw(num) << i.name;
+            write1 << left << setfill(' ') << setw(num) << i.surn;
+            write1 << left << setfill(' ') << setw(num2) << std::setprecision(2) << i.vidurkis();
+            write1 << left << setfill(' ') << setw(num2) << std::setprecision(2) << i.mediana();
+            write1 << endl;
+
+
+
+        }
+
+    }
+
+
+
+    for (auto& i : szee)
+    {
+
+        if (i.Group == false)
+        {
+
+
+            write2 << left << setfill(' ') << setw(num) << i.name;
+            write2 << left << setfill(' ') << setw(num) << i.surn;
+            write2 << left << setfill(' ') << setw(num2) << std::setprecision(2) << i.vidurkis();
+            write2 << left << setfill(' ') << setw(num2) << std::setprecision(2) << i.mediana();
+            write2 << endl;
+
+
+        }
+
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end - start;
+    std::cout << "Failo rusiavimas ir isvedimas i dvi grupes su 1 strategija uztruko : " << diff.count() << " s\n";
+
+    
+
+    write1.close();
+    write2.close();
+
+    
+}
+
+
+void Studentu_grupes2(vector <data>& szee)
+{
+
+
+
+    auto start = std::chrono::high_resolution_clock::now();
+    auto st = start;
+
+    Rusiuojam_pagal_rezultatus(szee);
+
+
+    vector <data>::iterator it = std::stable_partition(szee.begin(), szee.end(), skirstom);
+    vector <data> silpni(it, szee.end());
+    szee.erase(it, szee.end());
 
     std::ofstream write1("sarasas/studentai.txt");
     std::ofstream write2("sarasas/nuskriausti.txt");
@@ -40,7 +130,7 @@ void Studentu_grupes(vector <data>& sze)
     write1 << bruksnys << endl;
     write2 << bruksnys << endl;
 
-    for (auto& u : sze)
+    for (auto& u : szee)
     {
         write1 << left << setfill(' ') << setw(num) << u.name;
         write1 << left << setfill(' ') << setw(num) << u.surn;
@@ -61,16 +151,19 @@ void Studentu_grupes(vector <data>& sze)
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start;
-    std::cout << "Failo rusiavimas ir isvedimas i dvi grupes uztruko : " << diff.count() << " s\n";
+    std::cout << "Failo rusiavimas ir isvedimas i dvi grupes su 2 strategija uztruko : " << diff.count() << " s\n";
 
     write1.close();
     write2.close();
+
+    silpni.clear();
 }
 
-
-void  Skaitom_faila(vector <data>& sze)
+void  Skaitom_faila1(vector <data>& szee)
 {
+   
     std::ifstream read("sarasas/studentai.txt");
+    
 
     if (!read)
     {
@@ -83,8 +176,6 @@ void  Skaitom_faila(vector <data>& sze)
     int inputNd;
     data z;
 
-    auto start = std::chrono::high_resolution_clock::now();
-    auto st = start;
 
     while (!read.eof())
     {
@@ -98,22 +189,19 @@ void  Skaitom_faila(vector <data>& sze)
             z.marks.push_back(inputNd);
         }
         read >> z.exam;
-        
-        sze.push_back(z);
+
+        szee.push_back(z);
     }
 
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> diff = end - start;
-    std::cout << "Failo su studentais nuskaitymas uztruko: " << diff.count() << endl;
 
-    sze.pop_back();
+    szee.pop_back();
     read.close();
 }
 
 void Generuojam_Sarasa()
 {
     std::srand(std::time(NULL));
-    
+
     int NR;
     std::cout << "iveskite, kiek studentu noretumete sugeneruoti(1000, 10 000, 100 000, 1 000 000, 10 000 000):" << std::endl;
     std::cin >> NR;
