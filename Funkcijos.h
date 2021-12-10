@@ -48,17 +48,16 @@ bool Lyginam_pagal_rezultatus(const data& a, const data& b);
 bool Lyginam_pagal_varda(const data& a, const data& b);
 
 
-void  Skaitom_faila1(vector <data>& sze);
+void  Skaitom_faila1(vector <data>& szee);
 void  Skaitom_faila2(list <data>& sze);
 bool skirstom(const data& a);
 void Rusiuojam_pagal_rezultatus(vector <data>& sze);
-void Generuojam_Sarasa1();
-void Generuojam_Sarasa2();
+void Generuojam_Sarasa();
 int GetLongestString(vector <data>& sze);
 void Studentu_grupes1_list(list <data>& sze);
 void Studentu_grupes2_list(list <data>& sze);
-void Studentu_grupes1(vector <data>& sze);
-void Studentu_grupes2(vector <data>& sze);
+void Studentu_grupes1(vector <data>& szee);
+void Studentu_grupes2(vector <data>& szee);
 unsigned int wordsinstring(std::string const& str);
 int randomMark();
 void auto_ivedimas(data sze[], int i, int n);
